@@ -1,0 +1,146 @@
+<style>
+  body {
+    background-color: black;
+    color: lime;
+    font-family: Coda Caption:800;
+  }
+
+  input {
+    background-color: black;
+    color: lime;
+	border: transparent;
+  }
+
+  button {
+    background-color: black;
+    color: lime;
+  }
+</style>
+
+<html>
+  <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800" rel="stylesheet">
+  <p id="output">Type mail in the input field</p>
+  <p>><input id="input" type="text" name="command" value=""></p>
+  <button id="button" onclick="run()">ENTER</button>
+
+</html>
+
+<script>
+
+var button = document.getElementById("button")
+
+var input = document.getElementById("input")
+
+var text = document.getElementById("output")
+
+var stage = 1
+var person = "anna"
+
+var message = "TO YOU: FROM Joey Wafffle. Hello! I think My friend has hacked my Fortnite account and deleted my Vbucks ,Levels and Tiers can you check if I'm correct? If I am delete Fortnite From their computer. Their username is anna and password is vbucks. Type connect to hack into different computers! Thanks! From Joey"
+
+function annaMail() {
+  text.innerHTML = "TO ANNA: FROM Bill. Hello! Later on I'm coming round to hack Joeys Fortnite! I just need to finish my Job Application for Chicken.com then I'll be right over! If I'm not my username is Bill and password cat. BYEEE"
+}
+
+function mail() {
+  text.innerHTML = message
+}
+
+function anna() {
+  text.innerHTML = "Logged in as ANNA"
+  if (input.value == "l" || input.value == "ls") {
+    text.innerHTML = "mail      fortnite"
+  } else if (input.value == "mail" || input.value == "m") {
+    annaMail()
+  } else if (input.value == "delete fortnite" || input.value == "remove fortnite") {
+    text.innerHTML = "DELETED FORTNITE"
+    stage = 2
+    alert("COMPLETED! Type exit to go back to your computer and check your messages!")
+    message = "TO YOU: FROM Chicken.com. Hi! I heard you hacked fortnite but don't worry! I deleted all your traces. Duck.com are catching up with Chicken.com. I want you to hack them and change their password so they can never text their OS. The username is duck and password c0m. The way you change a password is by typing pass!"
+  } else if (input.value == "exit") {
+    button.onclick = run
+    run()
+  } else {
+    text.innerHTML = input.value
+  }
+}
+
+function duck() {
+  text.innerHTML = "Entered Duck.com"
+
+  if (input.value == "l" || input.value == "ls") {
+    text.innerHTML = "mail duck.png"
+  } else if (input.value == "mail" || input.value == "m") {
+    text.innerHTML = "none"
+  } else if (input.value == "pass") {
+    var q = prompt("To check you are duck.com what is duck times 3? USE NO SPACES")
+    if (q == "duckduckduck") {
+      text.innerHTML = "CHANGED PASS TO 6Z54I4X54683765YRGYURCHICKEN"
+      stage = 3
+      alert("COMPLETED! Type exit to go back to your computer and check your messages!")
+      message = "TO YOU: FROM Timmy Carrot. Hey! I sent an application off to a company I want to work for! There are another 3 people who have applied and they are going to get the job not me:( Change their applications to terrible ones using change! The username is computer and password games.Thanks!"
+
+    } else {
+		alert("ACCESS DENIED!")
+    }
+  } else if (input.value == "exit") {
+		button.onclick = run
+    run()
+  } else {
+    text.innerHTML = input.value
+  }
+}
+
+function computerGame() {
+  text.innerHTML = "Buy our best games at aWebsite.com!"
+  if (input.value == "l" || input.value == "ls") {
+    text.innerHTML = "mail games application1 application2 application3"
+  } else if (input.value == "mail" || input.value == "m") {
+    text.innerHTML = "TO YOU: FROM Waffle. I got a waffle game but when I bought it it broke. Please help :("
+  } else if (input.value == "pass") {
+      alert("ACCESS DENIED!")
+  } else if (input.value == "exit") {
+    button.onclick = run
+    run()
+  } else if (input.value == "change") {
+    var change = prompt("What do you want to change it to?")
+    var q = prompt("How many characters long is the application now?")
+
+    if (q == change.length) {
+      alert("COMPLETE! Go back to your computer and check your mail!")
+      
+    }
+  } else {
+    text.innerHTML = input.value
+  }
+}
+
+function c() {
+
+  text.innerHTML = "PLEASE ENTER USERNAME"
+
+  if (stage == 1) {
+    button.onclick = anna
+  } else if (stage == 2) {
+    button.onclick = duck
+    duck()
+  } else if (stage ==  3) {
+    text.innerHTML = "Hi! Thanks for playing my game! Please feel free to edit my game and add new features on github :D"
+  }
+
+}
+
+function run() {
+  if (input.value == "l" || input.value == "ls") {
+    text.innerHTML = "mail"
+  } else if (input.value == "mail" || input.value == "m") {
+    mail()
+  } else if (input.value == "connect") {
+    button.onclick = c
+    c()
+  } else if (input.value == "scotlandjs") {
+	window.open("secret.html")
+  }
+}
+
+</script>
